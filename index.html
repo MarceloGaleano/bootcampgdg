@@ -1,65 +1,99 @@
 <!DOCTYPE html>
-<html>
-
-<!-- Esto es una prueba -->
-
+<html lang="es">
 
 <head>
   <meta charset="utf-8">
-  <title>Nuestra Primera Página en HTML5</title>
+  <title>Bootstrap</title>
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimun-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/startbootstrap-sb-admin-2/3.3.7+1/css/sb-admin-2.css">
 </head>
 
 <body>
-  <header style="background-color: green; color: black;">
-    GDG Bootcamp
-  </header>
-  <nav>
-    <a href="index.html">Inicio</a>
-    <a href="sobre-nosotros.html">Sobre Nosotros</a>
-    <a href="contactos.html">Contactos</a>
-  </nav>
+  <div id="wrapper">
 
-  <aside class="">
-    <div class="" id="sidebar">
-      <ul id="sidebar-menu">
-        <li class="item-menu">
-          <a href="index.html">Inicio</a>
+    <nav class="navbar navbar-default" role="navigation">
+
+      <div class="navbar-header">
+        <a href="#" class="navbar-brand">GDG CDE</a>
+      </div>
+      <ul class="nav navbar-top-links navbar-right">
+        <li> <a href="#">Mi perfil</a> </li>
+        <li> <a href="#">Cerrar Sesión </li>
+        </ul>
+
+        <div class="navbar-default sidebar" role="navigation">
+          <ul class="nav" id="side-menu">
+            <li>
+              <a href="#">Eventos</a>
         </li>
-        <li class="item-menu">
-          <a href="sobre-nosotros.html">Sobre Nosotros</a>
-        </li>
-        <li class="item-menu">
-          <a href="contactos.html">Contactos</a>
+        <li>
+          <a href="#">Talleres</a>
         </li>
       </ul>
-    </div>
-  </aside>
+  </div>
+  </nav>
 
-  <section style="background-color: yellow; color: black;">
-    <header>
-      <h1 style="color: red">Novedades</h1>
-    </header>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-      in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-    </p>
-  </section>
-  <section style="background-color: peru; color:white;">
-    <header>
-      <h1>Eventos</h1>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-        in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      </p>
-    </header>
-  </section>
+  <main id="page-wrapper">
+    <div class="row">
+      <h1 class="page-header">Eventos</h1>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            A traves de este formulario se crea el evento
+          </div>
+          <div class="panel-body">
+            <div class="row">
+              <div class="col-md-12">
+                <form id="formEvento">
+                  <div class="form-group">
+                   <label for="nombre">Nombre</label>
+                    <input type="text" class="form-control" id="nombre" placeholder="Inroduzca el Nombre">
+                   <label for="descripcion">Descripcion</label>
+                    <input type="text" class="form-control" id="descripcion" placeholder="Inroduzca la Descripcion">
+                   <label for="direccion">Dirección</label>
+                    <input type="text" class="form-control" id="direccion" placeholder="Inroduzca la Dirección">
+                   <label for="ciudad">Ciudad</label>
+
+                    <select class="form-control" id="ciudad" name="ciudad">
+                      <option value="Ciudad del Este">Ciudad del Este</option>
+                      <option value="Asunción" selected>Asunción</option>
+                      <option value="Encarnación">Encarnación</option>
+                      <option value="Coronel Oviedo">Coronel Oviedo</option>
+                    </select>
+                    <button style="margin: 5px" type="button" class="btn btn-success" onclick="enviarDatos()">Enviar</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </main>
+  </div>
+  <footer>
+    <h3>Pie de página</h3> </footer>
+  </div>
+  <script type="text/javascript">
+
+    // console.log(document.getElementById("nombre"));
+
+    function enviarDatos(){
+      console.log("Datos Enviados!");
+      let datos = document.getElementById("nombre").value;
+      let indexCiudad = document.getElementById("formEvento").elements.namedItem("ciudad").selectedIndex;
+      let ciudad = document.getElementById("formEvento").elements.namedItem("ciudad").options[indexCiudad].value;
+      console.log(datos);
+      console.log(ciudad);
+      console.log("--------------");
+
+      //console.log(document.getElementsByClassName('form-group'));
+    }
+
+  </script>
 </body>
-<footer style="background-color: black; color: white">
-  <ul>
-    <li>Teléfono: 061 500500</li>
-    <li>email: ejemplo@ejemplo.com</li>
-    <small>&copy Copyright 2018 - Hugo Marcelo Galeano</small>
-  </ul>
-</footer>
 
 </html>
