@@ -1,0 +1,24 @@
+{
+  "name": "proyecto",
+  "version": "1.0.0",
+  "description": "Sistema de Administración de Eventos del GDG CDE",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MarceloGaleano/bootcampgdg.git"
+  },
+  "author": "Marcelo Galeano",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MarceloGaleano/bootcampgdg/issues"
+  },
+  "homepage": "https://github.com/MarceloGaleano/bootcampgdg#readme",
+  "dependencies": {
+    "sequelize": "^4.35.5",
+    "sequelize-cli": "^4.0.0",
+    "sqlite3": "^3.1.13"
+  }
+}
